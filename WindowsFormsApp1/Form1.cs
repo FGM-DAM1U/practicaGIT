@@ -20,33 +20,45 @@ namespace WindowsFormsApp1
         private void btnResultado_Click(object sender, EventArgs e)
         {
             string textoTelegrama;
-            char tipoTelegrama = ' ';
-            int numPalabras = 0;
-            double coste;
+            char tipoTelegrama = 'o';//Los telegramas son ordinarios por defecto
+            int numPalabras = 1; //Inicializado a 1 en vez de 0 para el contador de palabras
+            double coste = 0;
+            int i = 0; //Para arreglar el contador de palabras
 
             //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
-            // telegrama urgente?
-            if (cbUrgente.Checked)
-                tipoTelegrama = 'u';
-            //Obtengo el número de palabras que forma el telegrama
-            numPalabras = textoTelegrama.Length;
-            //Si el telegrama es ordinario
-            if (tipoTelegrama == 'o')
-                if (numPalabras <= 10)
-                    coste = 25;
-                else
-                    coste = 0.5 * numPalabras;
-                 else
-            //Si el telegrama es urgente
+            //Por si se pulsa Calcular con el texto vacío (único caso de Coste=0...)
+            if (txtTelegrama.Text != "")
+            {
+                //¿Telegrama urgente?
+                if (cbUrgente.Checked)
+                    tipoTelegrama = 'u';
+                //Obtengo el número de palabras que forma el telegrama, ahora CORRECTAMENTE
+                //(siempre que no se introduzcan varios espacios o saltos de línea seguidos...)
+                while (i < textoTelegrama.Length)
+                {
+                    if (textoTelegrama[i] == ' ' || textoTelegrama[i] == '\n' || textoTelegrama[i] == '\t')
+                        numPalabras++;
+                    i++;
+                }
+                //Si el telegrama es ordinario
+                if (tipoTelegrama == 'o')
+                {
+                    if (numPalabras <= 10)
+                        coste = 2.5;
+                    else
+                        coste = 2.5 + 0.5 * (numPalabras - 10);
+                }
+                //Si el telegrama es urgente
                 if (tipoTelegrama == 'u')
+                {
                     if (numPalabras <= 10)
                         coste = 5;
                     else
                         coste = 5 + 0.75 * (numPalabras - 10);
-                else
-                    coste = 0;
-            txtPrecio.Text = coste.ToString() + " euros";
+                }
+            }
+            txtPrecio.Text = coste.ToString() + " Euros";
         }
     }
 }
