@@ -137,7 +137,8 @@
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.TextBox txtTelegrama;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.RadioButton rbOrdinario;
+        private System.Windows.Forms.RadioButton rbOrdinario;// Código revisado y modificado por FGM-DAM1U
+
         private System.Windows.Forms.RadioButton rbUrgente;
     }
 }

@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
 
         private void btnResultado_Click(object sender, EventArgs e)
         {
+            // Código revisado y modificado por FGM-DAM1U
             string textoTelegrama;
             char tipoTelegrama = 'o';//Los telegramas son ordinarios por defecto
             int numPalabras = 1; //Inicializado a 1 en vez de 0 para el contador de palabras
