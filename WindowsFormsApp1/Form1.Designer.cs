@@ -65,9 +65,9 @@
             this.cbUrgente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbUrgente.Location = new System.Drawing.Point(41, 320);
             this.cbUrgente.Name = "cbUrgente";
-            this.cbUrgente.Size = new System.Drawing.Size(114, 29);
+            this.cbUrgente.Size = new System.Drawing.Size(126, 29);
             this.cbUrgente.TabIndex = 2;
-            this.cbUrgente.Text = "Urgente?";
+            this.cbUrgente.Text = "¿Urgente?";
             this.cbUrgente.UseVisualStyleBackColor = true;
             // 
             // lbl2
