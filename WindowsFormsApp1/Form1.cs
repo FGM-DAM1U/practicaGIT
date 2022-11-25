@@ -30,9 +30,11 @@ namespace WindowsFormsApp1
             //Por si se pulsa Calcular con el texto vacío (único caso de Coste=0...)
             if (txtTelegrama.Text != "")
             {
-                //¿Telegrama urgente?
-                if (cbUrgente.Checked)
-                    tipoTelegrama = 'u';
+            // telegrama urgente?
+            if (rbUrgente.Checked)
+                tipoTelegrama = 'u';
+            if (rbOrdinario.Checked)
+                tipoTelegrama = 'o';
                 //Obtengo el número de palabras que forma el telegrama, ahora CORRECTAMENTE
                 //(siempre que no se introduzcan varios espacios o saltos de línea seguidos...)
                 while (i < textoTelegrama.Length)
